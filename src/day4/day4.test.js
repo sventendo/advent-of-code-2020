@@ -34,7 +34,7 @@ const rulesPresence = {
     pid: value => !!value,
 };
 
-test('part1', () => {
+test('part 1', () => {
     const lines = readInput('day4.txt').split('\n');
     const passports = extractPassports(lines);
 
@@ -75,7 +75,7 @@ test('examplePassportsFieldsValid', () => {
     expect(getValidPassports(passports, rulesSpecific)).toHaveLength(4);
 });
 
-test('part2', () => {
+test('part 2', () => {
     const lines = readInput('day4.txt').split('\n');
     const passports = extractPassports(lines);
 
