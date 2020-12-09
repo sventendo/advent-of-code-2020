@@ -7,3 +7,7 @@ export function readInput(fileName) {
 
     return input.toString();
 }
+
+export function readLines(fileName) {
+    return readInput(fileName).split('\n').filter(line => line);
+}

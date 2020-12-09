@@ -1,18 +1,18 @@
 import { calculateSeatNumber } from './day5';
-import { readInput } from '../readInput';
+import { readLines } from '../readInput';
 
 test('calculate seat number', () => {
     expect(calculateSeatNumber('FBFBBFFRLR')).toBe(357);
 });
 
 test('part 1', () => {
-    const lines = readInput('day5.txt').split('\n').filter(line => line);
+    const lines = readLines('day5.txt');
     const seatNumbers = lines.map(line => calculateSeatNumber(line));
     console.log(Math.max(...seatNumbers));
 });
 
 test('part 2', () => {
-    const lines = readInput('day5.txt').split('\n').filter(line => line);
+    const lines = readLines('day5.txt');
     const seatNumbers = lines.map(line => calculateSeatNumber(line));
     const lowestSeat = Math.min(...seatNumbers);
     const highestSeat = Math.max(...seatNumbers);

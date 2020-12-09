@@ -1,15 +1,15 @@
-import { readInput } from '../readInput';
+import { readLines } from '../readInput';
 import { extractRules, getOuterMostBagsForColor, getTotalAmountOfBags } from './day7';
 
 test('extract rules', () => {
-    const lines = readInput('day7_example.txt').split('\n').filter(line => line);
+    const lines = readLines('day7_example.txt');
     const rules = extractRules(lines);
 
     expect(Object.keys(rules).length).toBe(9);
 });
 
 test('count possible outer-most bags for color', () => {
-    const lines = readInput('day7_example.txt').split('\n').filter(line => line);
+    const lines = readLines('day7_example.txt');
     const rules = extractRules(lines);
 
     const outerMostBags = getOuterMostBagsForColor('shiny gold', rules);
@@ -17,7 +17,7 @@ test('count possible outer-most bags for color', () => {
 });
 
 test('part 1', () => {
-    const lines = readInput('day7.txt').split('\n').filter(line => line);
+    const lines = readLines('day7.txt');
     const rules = extractRules(lines);
 
     const outerMostBags = getOuterMostBagsForColor('shiny gold', rules);
@@ -25,7 +25,7 @@ test('part 1', () => {
 });
 
 test('count total amount of bags inside color', () => {
-    const lines = readInput('day7_example.txt').split('\n').filter(line => line);
+    const lines = readLines('day7_example.txt');
     const rules = extractRules(lines);
 
     const totalAmount = getTotalAmountOfBags('shiny gold', rules);
@@ -33,7 +33,7 @@ test('count total amount of bags inside color', () => {
 });
 
 test('count total amount of bags inside color with more rules', () => {
-    const lines = readInput('day7_example_2.txt').split('\n').filter(line => line);
+    const lines = readLines('day7_example_2.txt');
     const rules = extractRules(lines);
 
     const totalAmount = getTotalAmountOfBags('shiny gold', rules);
@@ -41,7 +41,7 @@ test('count total amount of bags inside color with more rules', () => {
 });
 
 test('part 2', () => {
-    const lines = readInput('day7.txt').split('\n').filter(line => line);
+    const lines = readLines('day7.txt');
     const rules = extractRules(lines);
 
     const totalAmount = getTotalAmountOfBags('shiny gold', rules);

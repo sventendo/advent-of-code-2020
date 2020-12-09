@@ -1,5 +1,5 @@
 import { extractPassports, getValidPassports } from './day4';
-import { readInput } from '../readInput';
+import { readInput, readLines } from '../readInput';
 
 test('extractsPassportData', () => {
     const lines = readInput('day4_example.txt').split('\n');
@@ -35,7 +35,7 @@ const rulesPresence = {
 };
 
 test('part 1', () => {
-    const lines = readInput('day4.txt').split('\n');
+    const lines = readLines('day4.txt');
     const passports = extractPassports(lines);
 
     console.log(getValidPassports(passports, rulesPresence).length);
@@ -62,14 +62,14 @@ const rulesSpecific = {
 
 test('examplePassportsFieldsInvalid', () => {
 
-    const lines = readInput('day4_invalid_passports.txt').split('\n');
+    const lines = readLines('day4_invalid_passports.txt');
     const passports = extractPassports(lines);
 
     expect(getValidPassports(passports, rulesSpecific)).toHaveLength(0);
 });
 test('examplePassportsFieldsValid', () => {
 
-    const lines = readInput('day4_valid_passports.txt').split('\n');
+    const lines = readLines('day4_valid_passports.txt');
     const passports = extractPassports(lines);
 
     expect(getValidPassports(passports, rulesSpecific)).toHaveLength(4);

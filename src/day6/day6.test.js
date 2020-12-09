@@ -1,4 +1,4 @@
-import { readInput } from '../readInput';
+import { readLines } from '../readInput';
 import { countAnswersEveryoneAnsweredYesForGroup, countYesAnswersForGroup, extractGroups } from './day6';
 
 test('countYesAnswersForSingleGroup', () => {
@@ -8,7 +8,7 @@ test('countYesAnswersForSingleGroup', () => {
 });
 
 test('countYesAnswersForMultipleGroups', () => {
-    const lines = readInput('day6_example.txt').split('\n');
+    const lines = readLines('day6_example.txt');
     const groups = extractGroups(lines);
 
     const yesAnswers = groups.map(group => countYesAnswersForGroup(group))
@@ -18,7 +18,7 @@ test('countYesAnswersForMultipleGroups', () => {
 });
 
 test('part 1', () => {
-    const lines = readInput('day6.txt').split('\n');
+    const lines = readLines('day6.txt');
     const groups = extractGroups(lines);
 
     const yesAnswers = groups.map(group => countYesAnswersForGroup(group))
@@ -28,7 +28,7 @@ test('part 1', () => {
 })
 
 test('sumOfAllYesAnswersForMultipleGroups', () => {
-    const lines = readInput('day6_example_all_yes.txt').split('\n');
+    const lines = readLines('day6_example_all_yes.txt');
     const groups = extractGroups(lines);
 
     const yesAnswers = groups.map(group => countAnswersEveryoneAnsweredYesForGroup(group))
@@ -38,7 +38,7 @@ test('sumOfAllYesAnswersForMultipleGroups', () => {
 });
 
 test('part 2', () => {
-    const lines = readInput('day6.txt').split('\n');
+    const lines = readLines('day6.txt');
     const groups = extractGroups(lines);
 
     const allYesAnswers = groups.map(group => countAnswersEveryoneAnsweredYesForGroup(group))
